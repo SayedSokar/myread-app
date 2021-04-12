@@ -4,15 +4,9 @@ import Footer from './Footer';
 import React, { Component } from 'react'
 
 // functions
-
-
+// props 
 const MainList = ({ ShelfChange, currentlyReading, wantToRead, read  }) => {
 
-  
-
-    
-
-  
   return (
 
     <div>
