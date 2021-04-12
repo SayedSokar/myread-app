@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+
 import BooksGrid from './BooksGrid'
 
 const BookShelf = ({title, books, ShelfChange}) => {
