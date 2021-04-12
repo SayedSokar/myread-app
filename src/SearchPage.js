@@ -1,11 +1,16 @@
 import React, { Component, Fragment } from 'react'
+// import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { DebounceInput } from 'react-debounce-input'
 import * as BooksAPI from './BooksAPI'
-
-
 import Book from './Book'
-import BooksGrid from './BooksGrid'
+// //-------------- back button logic-------------------//
+//    history = useHistory();
+//    routeChange = () =>{ 
+//     let path = ``; 
+//     history.push(path);
+//   }
 
 class SearchPage extends Component {
   constructor(props) {
@@ -18,6 +23,9 @@ class SearchPage extends Component {
     };
     
   }
+  
+  //----------------------------------------------------------//
+
   //-------------- updateQuery to get the Search Result-------//
   updateQuery = (query) => {
 
@@ -65,7 +73,8 @@ class SearchPage extends Component {
         
         <div className="search-books">
           <div className="search-books-bar">
-            <Link to="/" className="close-search">Close</Link>
+          {/* <button className="close-search" onClick={routeChange}>GoBack</button> */}
+          <Link className="close-search" to="/">Close</Link>
 
             <div className="search-books-input-wrapper">
               <DebounceInput
@@ -95,6 +104,11 @@ class SearchPage extends Component {
         </div>
       
     )
+  }
+  static propTypes = {
+    onSearch: PropTypes.func.isRequired,
+    onShelfChange: PropTypes.func.isRequired,
+    booksInShelf: PropTypes.array.isRequired,
   }
 }
 
